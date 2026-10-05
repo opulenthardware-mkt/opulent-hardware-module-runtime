@@ -12,6 +12,15 @@ Opulent Hardware Module Runtime is a Windows tray application that supplies loca
 - Single-instance tray application with **Start with Windows** enabled on first launch
 - Loopback-only HTTP service; no account or cloud connection required
 
+## Installation
+
+1. Download `Opulent-Hardware-Module-Runtime-1.0.0.exe` from the release.
+2. Run it once. The app starts in the Windows notification area.
+3. Startup with Windows is enabled automatically on first launch.
+4. Right-click the tray icon to open status, disable or re-enable startup, or exit.
+
+The startup preference is opt-out: after a user disables it, later launches preserve that choice.
+
 ## Privacy and security
 
 The Runtime binds only to `127.0.0.1:17652`. It does not listen on the LAN, record audio, upload media, require an account, or transmit personal data off the PC. Browser-origin checks restrict API access to local widget and development contexts.
