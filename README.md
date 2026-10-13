@@ -16,8 +16,6 @@ Opulent Hardware Module Runtime is a Windows tray application that supplies loca
 
 The Runtime binds only to `127.0.0.1:17652`. It does not listen on the LAN, record audio, upload media, require an account, or transmit personal data off the PC. Browser-origin checks restrict API access to local widget and development contexts.
 
-See [API.md](API.md) for the versioned local API and capability contract.
-
 ## Requirements
 
 - Windows 10 version 2004 or newer
