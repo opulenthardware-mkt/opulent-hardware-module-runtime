@@ -24,29 +24,6 @@ See [API.md](API.md) for the versioned local API and capability contract.
 - x64 processor
 - .NET 8 SDK only when building from source; release builds are self-contained
 
-## Build
-
-```powershell
-dotnet restore .\Opulent.Hardware.VolumeMixer.csproj
-dotnet build .\Opulent.Hardware.VolumeMixer.csproj -c Release
-```
-
-Create the self-contained single-file executable:
-
-```powershell
-dotnet publish .\Opulent.Hardware.VolumeMixer.csproj -c Release -r win-x64 --self-contained true -o .\publish
-```
-
-Run the built-in checks:
-
-```powershell
-.\publish\Opulent-Hardware-Module-Runtime.exe --self-test
-.\publish\Opulent-Hardware-Module-Runtime.exe --diagnostics-json
-.\publish\Opulent-Hardware-Module-Runtime.exe --media-json
-```
-
-The diagnostic commands inspect the current Windows audio/media environment. Results therefore depend on the devices and sessions available on the machine running them.
-
 ## Installation
 
 1. Download `Opulent-Hardware-Module-Runtime-1.0.1.exe` from the release.
