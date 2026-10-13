@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1 — 2026-10-12
+
+- Fixed output and microphone endpoint ordering so changing the Windows default device no longer reshuffles the device cycle.
+- Ensured clients can traverse every active endpoint, including built-in speakers, display audio, USB outputs, and headset endpoints.
+
 ## 1.0.0 — 2026-10-04
 
 - Initial public release of Opulent Hardware Module Runtime.

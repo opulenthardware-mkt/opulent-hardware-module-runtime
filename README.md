@@ -1,6 +1,6 @@
 # Opulent Hardware Module Runtime
 
-Opulent Hardware Module Runtime is a Windows tray application that supplies local audio and media capabilities to compatible Opulent Hardware widgets. Version 1.0.0 powers the BIO-GRID Audio Module while keeping the capability layer independent from any particular visual skin.
+Opulent Hardware Module Runtime is a Windows tray application that supplies local audio and media capabilities to compatible Opulent Hardware widgets. Version 1.0.1 powers the BIO-GRID Audio Module while keeping the capability layer independent from any particular visual skin.
 
 ## Features
 
@@ -11,15 +11,6 @@ Opulent Hardware Module Runtime is a Windows tray application that supplies loca
 - Capability-based handshake for future compatible widgets and skins
 - Single-instance tray application with **Start with Windows** enabled on first launch
 - Loopback-only HTTP service; no account or cloud connection required
-
-## Installation
-
-1. Download `Opulent-Hardware-Module-Runtime-1.0.0.exe` from the release.
-2. Run it once. The app starts in the Windows notification area.
-3. Startup with Windows is enabled automatically on first launch.
-4. Right-click the tray icon to open status, disable or re-enable startup, or exit.
-
-The startup preference is opt-out: after a user disables it, later launches preserve that choice.
 
 ## Privacy and security
 
@@ -58,7 +49,7 @@ The diagnostic commands inspect the current Windows audio/media environment. Res
 
 ## Installation
 
-1. Download `Opulent-Hardware-Module-Runtime-1.0.0.exe` from the release.
+1. Download `Opulent-Hardware-Module-Runtime-1.0.1.exe` from the release.
 2. Run it once. The app starts in the Windows notification area.
 3. Startup with Windows is enabled automatically on first launch.
 4. Right-click the tray icon to open status, disable or re-enable startup, or exit.
