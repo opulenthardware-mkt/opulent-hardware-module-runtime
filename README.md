@@ -1,49 +1,53 @@
 # Opulent Hardware Module Runtime
 
-Opulent Hardware Module Runtime is a Windows tray application that supplies local audio and media capabilities to compatible Opulent Hardware widgets. Version 1.0.1 powers the BIO-GRID Audio Module while keeping the capability layer independent from any particular visual skin.
+Opulent Hardware Module Runtime is the local Windows companion for compatible Opulent Hardware widgets, including BIO-GRID Audio Module. It provides Windows audio mixing, microphone control, playback-device switching, media artwork, timeline progress, transport controls, and supported seeking.
 
-## Features
+This is the official download and documentation repository. The Runtime is distributed as a compiled Windows application; its source code is not published here.
 
-- Master and per-application Windows volume control
-- Playback-device and default-microphone switching
-- Microphone gain, mute, input level, and capture-activity reporting
-- Now-playing metadata, artwork, timeline progress, transport controls, and supported seeking
-- Capability-based handshake for future compatible widgets and skins
-- Single-instance tray application with **Start with Windows** enabled on first launch
-- Loopback-only HTTP service; no account or cloud connection required
+## Current release
 
-## Privacy and security
+**Runtime 1.0.2** improves album and browser-video artwork reliability during natural track changes, playlist autoplay, and delayed Windows media-session thumbnail updates.
 
-The Runtime binds only to `127.0.0.1:17652`. It does not listen on the LAN, record audio, upload media, require an account, or transmit personal data off the PC. Browser-origin checks restrict API access to local widget and development contexts.
+BIO-GRID Audio Module 1.1.1 and Runtime 1.0.2 are the recommended pairing.
 
 ## Requirements
 
 - Windows 10 version 2004 or newer
+- Windows 11
 - x64 processor
-- .NET 8 SDK only when building from source; release builds are self-contained
+- A compatible Opulent Hardware widget
 
 ## Installation
 
-1. Download `Opulent-Hardware-Module-Runtime-1.0.1.exe` from the release.
-2. Run it once. The app starts in the Windows notification area.
-3. Startup with Windows is enabled automatically on first launch.
-4. Right-click the tray icon to open status, disable or re-enable startup, or exit.
+1. Download `Opulent-Hardware-Module-Runtime-1.0.2.exe` from the latest GitHub Release.
+2. Create a permanent folder such as `%LOCALAPPDATA%\Opulent Hardware\Module Runtime`.
+3. Place the downloaded executable in that folder before running it.
+4. Run the executable. The Runtime appears in the Windows notification area.
+5. Right-click its notification-area icon to open status, control **Start with Windows**, or exit.
+6. In iCUE, ensure **Settings → Widget Access → BIO-GRID Audio Module → localhost:17652** is allowed.
 
-The startup preference is opt-out: after a user disables it, later launches preserve that choice.
+Do not leave the Runtime in Downloads or a temporary folder. Windows startup points to the exact executable location from which the Runtime was launched.
 
-## Local API
+## Updating
 
-- Base URL: `http://127.0.0.1:17652/api/v1`
-- Health: `GET /health`
-- Runtime descriptor: `GET /runtime`
-- Capabilities: `GET /capabilities`
-- Diagnostics: `GET /diagnostics`
+1. Exit the currently running Runtime from its notification-area icon.
+2. Download the new executable from GitHub Releases.
+3. Replace the previous executable in the same permanent folder.
+4. Run the new version once.
+5. If Windows startup does not work after an update, uncheck and recheck **Start with Windows** from the Runtime tray menu.
 
-The protocol version remains `1.0` and is intentionally separate from the application release version.
+## Removing the Runtime
 
-## Release policy
+1. Right-click the Runtime's notification-area icon.
+2. Uncheck **Start with Windows**.
+3. Select **Exit**.
+4. Delete the executable and its containing folder.
 
-Application releases use semantic versioning. The stable widget-facing contract is capability-based so newer widgets can detect missing features and degrade gracefully.
+## Local service and privacy
+
+The Runtime uses Windows audio and media APIs and exposes a local-only service at `127.0.0.1:17652`. It does not listen on the local network, require an account, connect to a cloud service, record audio, or transmit audio or personal data off the PC.
+
+See [PRIVACY.md](PRIVACY.md), [SECURITY.md](SECURITY.md), and [SUPPORT.md](SUPPORT.md) for additional information.
 
 ## License
 
